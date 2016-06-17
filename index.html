@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Test calculator</title>
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="main.js"></script>
+	<style>
+	.row {
+		margin-bottom: 0.5em;
+	}
+
+	.alert {
+		margin-bottom: 0;
+	}
+	</style>
+</head>
+<body>
+
+<div ng-controller="CalculatorCtrl">
+	 <div class="container">
+	 	<div class="row">
+	 		<div class="col-xs-4">
+		    	<h4>Calculator</h4>
+		    	<div class="row">
+		    		<div class="col-xs-12">
+		    			<div class="alert alert-info">{{operationStr}}</div>
+		    		</div>
+		    	</div>
+		    	<div class="row">
+		  		  	<div class="col-xs-12">
+		    			<input type="text" class="form-control" ng-model="result" ng-disabled="true">
+		    		</div>
+		    	</div>
+			    <div class="row" ng-repeat="button_row in buttons">
+					    	<calc-button ng-repeat="button in button_row" type="{{button.type}}" label="{{button.label}}" click="click"></calc-button>
+			    </div>
+    		</div>
+    	</div>
+    </div>
+ </div>
+
+
+</body>
+</html>
